@@ -45,4 +45,44 @@ RSpec.describe 'books search' do
       expect(book[:publisher]).to be_an(Array)
     end
   end
+
+  it "returns an error if location or quantity are missing", :vcr do
+    get '/api/v1/book-search?location=denver,co&quantity='
+
+    expect(response.status).to eq(400)
+  end
+
+  it "returns an error if location or quantity are missing", :vcr do
+    get '/api/v1/book-search?location=&quantity=5'
+
+    expect(response.status).to eq(400)
+  end
+
+  it "returns an error if location or quantity are missing", :vcr do
+    get '/api/v1/book-search?location=&quantity='
+
+    expect(response.status).to eq(400)
+  end
+
+  it "returns an error if given bad location", :vcr do
+    get '/api/v1/book-search?location=notalocation&quantity=5'
+
+    expect(response.status).to eq(400)
+  end
+
+  it "returns an error if given negative number for quantity", :vcr do
+    get '/api/v1/book-search?location=denver,co&quantity=-2'
+
+    expect(response.status).to eq(400)
+  end
+
+  it "returns books if given float for quantity", :vcr do
+    get '/api/v1/book-search?location=denver,co&quantity=2.5'
+
+    expect(response.status).to eq(200)
+
+    books = JSON.parse(response.body, symbolize_names: true)
+
+    expect(books[:data][:books].count).to eq(2)
+  end
 end
