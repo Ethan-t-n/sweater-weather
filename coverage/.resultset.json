@@ -84,8 +84,8 @@
           1,
           1,
           1,
-          1,
-          1,
+          12,
+          12,
           1,
           1,
           1,
@@ -318,6 +318,26 @@
           null
         ]
       },
+      "/Users/ethan/turing/3module/sweater-weather/spec/facades/books_facade_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/ethan/turing/3module/sweater-weather/spec/facades/map_quest_facade_spec.rb": {
         "lines": [
           1,
@@ -346,6 +366,35 @@
           1,
           1,
           1,
+          null,
+          null
+        ]
+      },
+      "/Users/ethan/turing/3module/sweater-weather/spec/poros/book_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/ethan/turing/3module/sweater-weather/app/poros/book.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          18,
+          18,
+          18,
           null,
           null
         ]
@@ -496,6 +545,98 @@
           1,
           1,
           1,
+          null,
+          null
+        ]
+      },
+      "/Users/ethan/turing/3module/sweater-weather/spec/requests/api/v1/books_request_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
           null,
           null
         ]
@@ -786,6 +927,23 @@
           null
         ]
       },
+      "/Users/ethan/turing/3module/sweater-weather/spec/services/books_service_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/ethan/turing/3module/sweater-weather/spec/services/mapquest_service_spec.rb": {
         "lines": [
           1,
@@ -841,11 +999,11 @@
         "lines": [
           1,
           1,
-          27,
+          33,
           null,
           null,
           1,
-          27,
+          33,
           null,
           null
         ]
@@ -871,11 +1029,41 @@
           null
         ]
       },
+      "/Users/ethan/turing/3module/sweater-weather/app/facades/books_facade.rb": {
+        "lines": [
+          1,
+          1,
+          4,
+          null,
+          4,
+          null,
+          4,
+          null,
+          4,
+          17,
+          null,
+          null,
+          4,
+          null,
+          null
+        ]
+      },
+      "/Users/ethan/turing/3module/sweater-weather/app/services/books_service.rb": {
+        "lines": [
+          1,
+          1,
+          5,
+          5,
+          5,
+          null,
+          null
+        ]
+      },
       "/Users/ethan/turing/3module/sweater-weather/app/facades/mapquest_facade.rb": {
         "lines": [
           1,
           1,
-          9,
+          12,
           null,
           null,
           1,
@@ -888,8 +1076,8 @@
         "lines": [
           1,
           1,
-          11,
-          11,
+          14,
+          14,
           null,
           null,
           1,
@@ -903,7 +1091,7 @@
         "lines": [
           1,
           1,
-          8,
+          11,
           null,
           null
         ]
@@ -912,8 +1100,8 @@
         "lines": [
           1,
           1,
-          9,
-          9,
+          12,
+          12,
           null,
           null
         ]
@@ -1046,6 +1234,30 @@
           null
         ]
       },
+      "/Users/ethan/turing/3module/sweater-weather/app/controllers/api/v1/books_controller.rb": {
+        "lines": [
+          1,
+          1,
+          7,
+          3,
+          4,
+          1,
+          null,
+          3,
+          3,
+          3,
+          3,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/ethan/turing/3module/sweater-weather/app/models/user.rb": {
         "lines": [
           1,
@@ -1123,7 +1335,7 @@
           2,
           2,
           98,
-          52,
+          53,
           2,
           null,
           1,
@@ -1217,6 +1429,6 @@
         ]
       }
     },
-    "timestamp": 1664205234
+    "timestamp": 1664214018
   }
 }
