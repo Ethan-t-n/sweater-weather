@@ -6,7 +6,7 @@ class Api::V1::RoadTripController < ApplicationController
     else
       lat_long = MapquestFacade.get_lat_long(params[:destination])
       weather = WeatherFacade.get_weather(lat_long[:lat], lat_long[:lng])
-      weather_poro = Weather.new(weather)
+      weather_poro = Weather.new(weather, 8)
       travel_info = MapquestFacade.get_directions(params[:origin], params[:destination])[:route]
       if travel_info.has_key?(:formattedTime)
         formatted_travel_time = travel_info[:formattedTime]

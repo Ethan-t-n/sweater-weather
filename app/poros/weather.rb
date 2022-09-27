@@ -13,7 +13,7 @@ class Weather
               :daily_weather,
               :hourly_weather
 
-  def initialize(data)
+  def initialize(data, hours = 8)
     @id = nil
     @datetime = Time.at(data[:current][:dt])
     @sunrise = Time.at(data[:current][:sunrise])
