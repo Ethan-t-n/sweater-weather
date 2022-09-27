@@ -38,11 +38,11 @@ RSpec.describe 'roadtrip API' do
     expect(attributes.keys.count).to eq(4)
 
     weather = attributes[:weather_at_eta]
-    # expect(weather).to have_key(:temperature)
-    # expect(weather[:temperature]).to be_a(Float)
-    # expect(weather).to have_key(:conditions)
-    # expect(weather[:conditions]).to be_a(String)
-    # expect(weather.keys.count).to eq(2)
+    expect(weather).to have_key(:temperature)
+    expect(weather[:temperature]).to be_a(Float)
+    expect(weather).to have_key(:conditions)
+    expect(weather[:conditions]).to be_a(String)
+    expect(weather.keys.count).to eq(2)
   end
 
   it "returns an error if no API key provided" do
