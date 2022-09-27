@@ -5,7 +5,7 @@ RSpec.describe 'DailyWeather' do
     lat_long = MapquestFacade.get_lat_long("denver,co")
     weather = WeatherFacade.get_weather(lat_long[:lat], lat_long[:lng])
 
-    weather_poro = Weather.new(weather, 8)
+    weather_poro = Weather.new(weather)
 
     daily_weather = weather_poro.daily_weather.first
 
