@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'user login' do
-  it 'returns api key if user is validated' do
+  it 'returns api key if user is validated', :vcr do
     User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password", api_key: "very_secure_key")
 
     data = {
@@ -37,7 +37,7 @@ RSpec.describe 'user login' do
   end
 
 
-  it "returns error if credentials are incorrect" do
+  it "returns error if credentials are incorrect", :vcr do
     User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password", api_key: "very_secure_key")
 
     data = {
@@ -51,7 +51,7 @@ RSpec.describe 'user login' do
   end
 
 
-  it "returns error if credentials are incorrect" do
+  it "returns error if credentials are incorrect", :vcr do
     User.create!(email: "whatever@example.com", password: "password", password_confirmation: "password", api_key: "very_secure_key")
 
     data = {

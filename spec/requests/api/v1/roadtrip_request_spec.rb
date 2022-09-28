@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'roadtrip API' do
-  it 'returns location and weather info' do
+  it 'returns location and weather info', :vcr do
     User.create!(email: "email@mail.com", password: "yes", password_confirmation: "yes", api_key: "jgn983hy48thw9begh98h4539h4")
     data = {
       "origin": "Denver,CO",
@@ -46,7 +46,7 @@ RSpec.describe 'roadtrip API' do
     # expect(weather.keys.count).to eq(2)
   end
 
-  it "returns an error if no API key provided" do
+  it "returns an error if no API key provided", :vcr do
     User.create!(email: "email@mail.com", password: "yes", password_confirmation: "yes", api_key: "jgn983hy48thw9begh98h4539h4")
     data = {
       "origin": "Denver,CO",
@@ -59,7 +59,7 @@ RSpec.describe 'roadtrip API' do
   end
 
 
-  it "can handle a trip from NYC to LA" do
+  it "can handle a trip from NYC to LA", :vcr do
     User.create!(email: "email@mail.com", password: "yes", password_confirmation: "yes", api_key: "jgn983hy48thw9begh98h4539h4")
     data = {
       "origin": "New York, NY",
@@ -74,7 +74,7 @@ RSpec.describe 'roadtrip API' do
     expect(road_trip[:data][:attributes][:travel_time][0..1]).to eq("40")
   end
 
-  it "returns an error if no route possible" do
+  it "returns an error if no route possible", :vcr do
     User.create!(email: "email@mail.com", password: "yes", password_confirmation: "yes", api_key: "jgn983hy48thw9begh98h4539h4")
     data = {
       "origin": "New York, NY",
