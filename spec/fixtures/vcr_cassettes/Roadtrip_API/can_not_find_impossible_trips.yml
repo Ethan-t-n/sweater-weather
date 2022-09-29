@@ -19,17 +19,17 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Thu, 29 Sep 2022 03:44:26 GMT
+      - Thu, 29 Sep 2022 08:13:05 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
       - '278'
       Set-Cookie:
-      - JSESSIONID=69197BC9A2925F347A2DE8586F8EED9E; Path=/directions; HttpOnly
+      - JSESSIONID=51615A85EFF269D13519029E8662E140; Path=/directions; HttpOnly
       Expires:
       - Mon, 20 Dec 1998 01:00:00 GMT
       Last-Modified:
-      - Thu, 29 Sep 2022 03:44:26 GMT
+      - Thu, 29 Sep 2022 08:13:05 GMT
       Cache-Control:
       - no-cache, must-revalidate
       Pragma:
@@ -48,5 +48,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJyb3V0ZSI6eyJyb3V0ZUVycm9yIjp7ImVycm9yQ29kZSI6MiwibWVzc2FnZSI6IiJ9fSwiaW5mbyI6eyJzdGF0dXNjb2RlIjo0MDIsImNvcHlyaWdodCI6eyJpbWFnZUFsdFRleHQiOiLCqSAyMDIyIE1hcFF1ZXN0LCBJbmMuIiwiaW1hZ2VVcmwiOiJodHRwOi8vYXBpLm1xY2RuLmNvbS9yZXMvbXFsb2dvLmdpZiIsInRleHQiOiLCqSAyMDIyIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbIldlIGFyZSB1bmFibGUgdG8gcm91dGUgd2l0aCB0aGUgZ2l2ZW4gbG9jYXRpb25zLiJdfX0=
-  recorded_at: Thu, 29 Sep 2022 03:44:26 GMT
+  recorded_at: Thu, 29 Sep 2022 08:13:05 GMT
 recorded_with: VCR 6.1.0

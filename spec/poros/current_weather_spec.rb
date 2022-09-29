@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.describe Currentweather do
-    it "exists" do 
-        data = 
+    it "exists" do
+        data =
 
  {
         "dt": 1663962119,
@@ -41,5 +41,5 @@ RSpec.describe Currentweather do
         expect(current.visibility).to eq(10000)
         expect(current.conditions).to eq("clear sky")
         expect(current.icon).to eq("01d")
-    end 
-end 
+    end
+end

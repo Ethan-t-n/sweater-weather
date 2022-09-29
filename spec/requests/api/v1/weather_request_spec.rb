@@ -7,7 +7,7 @@ describe 'Weather API', :vcr do
         expect(response).to be_successful
 
         weather = JSON.parse(response.body, symbolize_names: true)[:data]
-        
+
         expect(weather).to have_key(:id)
         expect(weather[:id]).to eq(nil)
 
@@ -20,7 +20,7 @@ describe 'Weather API', :vcr do
         expect(weather[:attributes][:current_weather]).to be_a Hash
 
         expect(weather[:attributes]).to have_key(:daily_weather)
-        expect(weather[:attributes][:daily_weather]).to be_a Array 
+        expect(weather[:attributes][:daily_weather]).to be_a Array
         expect(weather[:attributes][:daily_weather].count).to eq(5)
 
         expect(weather[:attributes]).to have_key(:hourly_weather)
@@ -57,7 +57,7 @@ describe 'Weather API', :vcr do
         expect(weather[:attributes][:hourly_weather].first[:conditions]).to be_a String
         expect(weather[:attributes][:hourly_weather].first[:icon]).to be_a String
     end
-    
+
     it 'can returns an error if no location is provided' do
         get "/api/v1/forecast?location"
 
@@ -66,7 +66,7 @@ describe 'Weather API', :vcr do
 
         data = JSON.parse(response.body, symbolize_names: true)
         expect(data[:error]).to eq "location required"
-    end 
+    end
 
     it 'says what is not in the ' do
         get "/api/v1/forecast?location=denver,co"
@@ -74,9 +74,9 @@ describe 'Weather API', :vcr do
         weather = JSON.parse(response.body, symbolize_names: true)[:data]
 
         expect(weather[:attributes][:current_weather].keys).to_not contain_exactly(:pressure, :dew_point, :clouds, :wind_speed, :wind_deg)
-        
+
         expect(weather[:attributes][:daily_weather].first.keys).to_not contain_exactly(:moonrise, :moonset, :moon_phase, :day, :night, :eve, :morn, :pressure, :humidity, :dew_point, :wind_speed, :wind_deg, :wind_gust)
-        
+
         expect(weather[:attributes][:hourly_weather].first.keys).to_not contain_exactly(:pressure, :feels_like, :humidity, :dew_point, :uvi, :clouds, :visibility, :wind_deg, :wind_speed, :wind_gust)
-    end 
+    end
 end
