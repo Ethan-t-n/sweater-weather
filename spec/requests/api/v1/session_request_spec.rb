@@ -2,11 +2,11 @@ require 'rails_helper'
 
 describe 'Sessions API' do
     it 'creates a session if valid credentials' do
-        user = User.create!(email: "whatever12@example.com", password: "password1", password_confirmation: "password1")
+        user = User.create!(email: "email@example.com", password: "ps123", password_confirmation: "ps123")
          
         body = {
-                "email": "whatever12@example.com",
-                "password": "password1",
+                "email": "email@example.com",
+                "password": "ps123",
                 }
 
         post "/api/v1/sessions", params: body 
@@ -32,11 +32,11 @@ describe 'Sessions API' do
     end 
 
     it 'returns an error if passwords do not match' do
-        user = User.create!(email: "whatever12@example.com", password: "password1", password_confirmation: "password1")
+        user = User.create!(email: "email@example.com", password: "ps123", password_confirmation: "ps123")
 
         body = {
-                "email": "whatever12@example.com",
-                "password": "password1111",
+                "email": "email@example.com",
+                "password": "ps123111",
                 }
 
         post "/api/v1/sessions", params: body 
@@ -55,7 +55,7 @@ describe 'Sessions API' do
     it 'returns an error if user does not exist' do
         body = {
                 "email": "whatever1244@example.com",
-                "password": "password1111",
+                "password": "ps123111",
                 }
 
         post "/api/v1/sessions", params: body 
