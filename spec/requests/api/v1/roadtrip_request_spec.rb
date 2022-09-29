@@ -1,92 +1,222 @@
 require 'rails_helper'
 
-RSpec.describe 'roadtrip API' do
-  it 'returns location and weather info', :vcr do
-    User.create!(email: "email@mail.com", password: "yes", password_confirmation: "yes", api_key: "jgn983hy48thw9begh98h4539h4")
-    data = {
-      "origin": "Denver,CO",
-      "destination": "Pueblo,CO",
-      "api_key": "jgn983hy48thw9begh98h4539h4"
-    }
-    post '/api/v1/road_trip', params: data, as: :json
+describe 'Roadtrip API', :vcr do
+    it 'can return roadtrip data' do
+        user = User.create!(email: "whatever12@example.com", password: "password1", password_confirmation: "password1")
 
-    expect(response.status).to eq(200)
+        body = 
+            {
+            "origin": "Denver,CO",
+            "destination": "Pueblo,CO",
+            "api_key": "#{user.api_key}"
+            }
+            
+        post "/api/v1/road_trip", params: body 
 
-    road_trip = JSON.parse(response.body, symbolize_names: true)
+        expect(response).to be_successful
 
-    expect(road_trip).to have_key(:data)
-    expect(road_trip.keys.count).to eq(1)
+        roadtrip = JSON.parse(response.body, symbolize_names: true)[:data]
+        
+        expect(roadtrip).to have_key(:id)
+        expect(roadtrip[:id]).to eq(nil)
+
+        expect(roadtrip).to have_key(:type)
+        expect(roadtrip[:type]).to eq("roadtrip")
+
+        expect(roadtrip).to have_key(:attributes)
+        expect(roadtrip[:attributes]).to be_a Hash 
+
+        expect(roadtrip[:attributes]).to have_key(:start_city)
+        expect(roadtrip[:attributes][:start_city]).to be_a String 
+        expect(roadtrip[:attributes][:start_city]).to eq "Denver,CO"
+
+        expect(roadtrip[:attributes]).to have_key(:end_city)
+        expect(roadtrip[:attributes][:end_city]).to be_a String 
+        expect(roadtrip[:attributes][:end_city]).to eq "Pueblo,CO"
+
+        expect(roadtrip[:attributes]).to have_key(:travel_time)
+        expect(roadtrip[:attributes][:travel_time]).to be_a String 
+
+        expect(roadtrip[:attributes]).to have_key(:weather_at_eta)
+        expect(roadtrip[:attributes][:weather_at_eta]).to be_a Hash  
+
+        expect(roadtrip[:attributes][:weather_at_eta]).to have_key(:temperature)
+        expect(roadtrip[:attributes][:weather_at_eta][:temperature]).to be_a(Float).or be_a(Integer)
+
+        expect(roadtrip[:attributes][:weather_at_eta]).to have_key(:conditions)
+        expect(roadtrip[:attributes][:weather_at_eta][:conditions]).to be_a(String)
+    end 
+
+    it 'can find with a short roadtrip' do
+        user = User.create!(email: "whatever12@example.com", password: "password1", password_confirmation: "password1")
+
+        body = 
+            {
+            "origin": "Arvada,CO",
+            "destination": "Golden,CO",
+            "api_key": "#{user.api_key}"
+            }
+            
+        post "/api/v1/road_trip", params: body 
+
+        expect(response).to be_successful
+
+        roadtrip = JSON.parse(response.body, symbolize_names: true)[:data]
+        
+        expect(roadtrip).to have_key(:id)
+        expect(roadtrip[:id]).to eq(nil)
+
+        expect(roadtrip).to have_key(:type)
+        expect(roadtrip[:type]).to eq("roadtrip")
+
+        expect(roadtrip).to have_key(:attributes)
+        expect(roadtrip[:attributes]).to be_a Hash 
+
+        expect(roadtrip[:attributes]).to have_key(:start_city)
+        expect(roadtrip[:attributes][:start_city]).to be_a String 
+        expect(roadtrip[:attributes][:start_city]).to eq "Arvada,CO"
+
+        expect(roadtrip[:attributes]).to have_key(:end_city)
+        expect(roadtrip[:attributes][:end_city]).to be_a String 
+        expect(roadtrip[:attributes][:end_city]).to eq "Golden,CO"
+
+        expect(roadtrip[:attributes]).to have_key(:travel_time)
+        expect(roadtrip[:attributes][:travel_time]).to be_a String 
+
+        expect(roadtrip[:attributes]).to have_key(:weather_at_eta)
+        expect(roadtrip[:attributes][:weather_at_eta]).to be_a Hash  
+
+        expect(roadtrip[:attributes][:weather_at_eta]).to have_key(:temperature)
+        expect(roadtrip[:attributes][:weather_at_eta][:temperature]).to be_a(Float).or be_a(Integer)
+
+        expect(roadtrip[:attributes][:weather_at_eta]).to have_key(:conditions)
+        expect(roadtrip[:attributes][:weather_at_eta][:conditions]).to be_a(String)
+    end 
+
+    it 'can find with a long roadtrip' do
+        user = User.create!(email: "whatever12@example.com", password: "password1", password_confirmation: "password1")
+
+        body = 
+            {
+            "origin": "New York,NY",
+            "destination": "Los Angeles,CA",
+            "api_key": "#{user.api_key}"
+            }
+            
+        post "/api/v1/road_trip", params: body 
+
+        expect(response).to be_successful
+
+        roadtrip = JSON.parse(response.body, symbolize_names: true)[:data]
+        
+        expect(roadtrip).to have_key(:id)
+        expect(roadtrip[:id]).to eq(nil)
+
+        expect(roadtrip).to have_key(:type)
+        expect(roadtrip[:type]).to eq("roadtrip")
+
+        expect(roadtrip).to have_key(:attributes)
+        expect(roadtrip[:attributes]).to be_a Hash 
+
+        expect(roadtrip[:attributes]).to have_key(:start_city)
+        expect(roadtrip[:attributes][:start_city]).to be_a String 
+        expect(roadtrip[:attributes][:start_city]).to eq "New York,NY"
+
+        expect(roadtrip[:attributes]).to have_key(:end_city)
+        expect(roadtrip[:attributes][:end_city]).to be_a String 
+        expect(roadtrip[:attributes][:end_city]).to eq "Los Angeles,CA"
+
+        expect(roadtrip[:attributes]).to have_key(:travel_time)
+        expect(roadtrip[:attributes][:travel_time]).to be_a String 
+
+        expect(roadtrip[:attributes]).to have_key(:weather_at_eta)
+        expect(roadtrip[:attributes][:weather_at_eta]).to be_a Hash  
+
+        expect(roadtrip[:attributes][:weather_at_eta]).to have_key(:temperature)
+        expect(roadtrip[:attributes][:weather_at_eta][:temperature]).to be_a(Float).or be_a(Integer)
+
+        expect(roadtrip[:attributes][:weather_at_eta]).to have_key(:conditions)
+        expect(roadtrip[:attributes][:weather_at_eta][:conditions]).to be_a(String)
+    end
+
+    it 'can not find impossible trips' do
+        user = User.create!(email: "whatever12@example.com", password: "password1", password_confirmation: "password1")
+
+        body = 
+            {
+            "origin": "New York, NY",
+            "destination": "London, England",
+            "api_key": "#{user.api_key}"
+            }
+            
+        post "/api/v1/road_trip", params: body 
+
+        expect(response).to_not be_successful
+
+        result = JSON.parse(response.body, symbolize_names: true)
+         
+        expect(result).to have_key(:error)
+        expect(result[:error]).to eq("impossible")
+    end 
+
+    it 'can not find with a wrong api' do
+        user = User.create!(email: "whatever12@example.com", password: "password1", password_confirmation: "password1")
+
+        body = 
+            {
+            "origin": "New York, NY",
+            "destination": "Denver,CO",
+            "api_key": "abcdefgi"
+            }
+            
+        post "/api/v1/road_trip", params: body 
+
+        expect(response).to_not be_successful
+
+        result = JSON.parse(response.body, symbolize_names: true)
+         
+        expect(result).to have_key(:error)
+        expect(result[:error]).to eq("bad request")
+    end
     
-    data = road_trip[:data]
-    expect(data).to have_key(:id)
-    expect(data[:id]).to be nil
-    expect(data).to have_key(:type)
-    expect(data[:type]).to eq("roadtrip")
-    expect(data).to have_key(:attributes)
-    expect(data[:attributes]).to be_a(Hash)
-    expect(data.keys.count).to eq(3)
-    
-    attributes = data[:attributes]
-    expect(attributes).to have_key(:start_city)
-    expect(attributes[:start_city]).to be_a(String)
-    expect(attributes).to have_key(:end_city)
-    expect(attributes[:end_city]).to be_a(String)
-    expect(attributes).to have_key(:travel_time)
-    expect(attributes[:travel_time]).to be_a(String)
-    expect(attributes).to have_key(:weather_at_eta)
-    expect(attributes[:weather_at_eta]).to be_a(Hash)
-    expect(attributes.keys.count).to eq(4)
+     it 'can not find with no destination given' do
+        user = User.create!(email: "whatever12@example.com", password: "password1", password_confirmation: "password1")
 
-    weather = attributes[:weather_at_eta]
-    # code below sometimes works, and sometimes doesn't
-    # expect(weather).to have_key(:temperature)
-    # expect(weather[:temperature]).to be_a(Float)
-    # expect(weather).to have_key(:conditions)
-    # expect(weather[:conditions]).to be_a(String)
-    # expect(weather.keys.count).to eq(2)
-  end
+        body = 
+            {
+            "origin": "New York, NY",
+            "destination": "",
+            "api_key": "#{user.api_key}"
+            }
+            
+        post "/api/v1/road_trip", params: body 
 
-  it "returns an error if no API key provided", :vcr do
-    User.create!(email: "email@mail.com", password: "yes", password_confirmation: "yes", api_key: "jgn983hy48thw9begh98h4539h4")
-    data = {
-      "origin": "Denver,CO",
-      "destination": "Pueblo,CO",
-      "api_key": ""
-    }
-    post '/api/v1/road_trip', params: data, as: :json
+        expect(response).to_not be_successful
 
-    expect(response.status).to eq(401)
-  end
+        result = JSON.parse(response.body, symbolize_names: true)
+         
+        expect(result).to have_key(:error)
+        expect(result[:error]).to eq("bad request")
+    end
 
+     it 'can not find with no origin given' do
+        user = User.create!(email: "whatever12@example.com", password: "password1", password_confirmation: "password1")
 
-  it "can handle a trip from NYC to LA", :vcr do
-    User.create!(email: "email@mail.com", password: "yes", password_confirmation: "yes", api_key: "jgn983hy48thw9begh98h4539h4")
-    data = {
-      "origin": "New York, NY",
-      "destination": "Los Angeles, CA",
-      "api_key": "jgn983hy48thw9begh98h4539h4"
-    }
-    post '/api/v1/road_trip', params: data, as: :json
+        body = 
+            {
+            "origin": "",
+            "destination": "New York, NY",
+            "api_key": "#{user.api_key}"
+            }
+            
+        post "/api/v1/road_trip", params: body 
 
-    expect(response.status).to eq(200)
+        expect(response).to_not be_successful
 
-    road_trip = JSON.parse(response.body, symbolize_names: true)
-    expect(road_trip[:data][:attributes][:travel_time][0..1]).to eq("40")
-  end
+        result = JSON.parse(response.body, symbolize_names: true)
+         
+        expect(result).to have_key(:error)
+        expect(result[:error]).to eq("bad request")
+    end
 
-  it "returns an error if no route possible", :vcr do
-    User.create!(email: "email@mail.com", password: "yes", password_confirmation: "yes", api_key: "jgn983hy48thw9begh98h4539h4")
-    data = {
-      "origin": "New York, NY",
-      "destination": "London, UK",
-      "api_key": "jgn983hy48thw9begh98h4539h4"
-    }
-    post '/api/v1/road_trip', params: data, as: :json
-
-    expect(response.status).to eq(400)
-
-    road_trip = JSON.parse(response.body, symbolize_names: true)
-    expect(road_trip[:data][:attributes][:travel_time]).to eq("impossible")
-    expect(road_trip[:data][:attributes][:weather_at_eta]).to eq({})
-  end
-end
+end 

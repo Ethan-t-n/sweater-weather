@@ -68,9 +68,9 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.filter_sensitive_data('<mapquest_api_key>') { ENV['mapquest_api_key'] }
   config.filter_sensitive_data('<openweather_api_key>') { ENV['openweather_api_key'] }
-  config.default_cassette_options = { re_record_interval: 30.days }
+  # config.default_cassette_options = { re_record_interval: 30.days }
   config.configure_rspec_metadata!
-  config.allow_http_connections_when_no_cassette = true
+  # config.allow_http_connections_when_no_cassette = true
 end
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
