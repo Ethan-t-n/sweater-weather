@@ -3,9 +3,9 @@ require 'rails_helper'
 describe 'User API' do
     it 'creates users and return an API key' do
         body = {
-                "email": "whatever12@example.com",
-                 "password": "password1",
-                "password_confirmation": "password1"
+                "email": "email@example.com",
+                 "password": "ps123",
+                "password_confirmation": "ps123"
                 }
 
         post "/api/v1/users", params: body 
@@ -32,7 +32,7 @@ describe 'User API' do
         body = {
                 "email": "whatever12345@example.com",
                 "password": "password",
-                "password_confirmation": "password1"
+                "password_confirmation": "ps123"
                 }
 
         post "/api/v1/users", params: body 
@@ -73,17 +73,17 @@ describe 'User API' do
 
     it 'will not create a user if email is already taken' do
         body = {
-                "email": "whatever12@example.com",
-                 "password": "password1",
-                "password_confirmation": "password1"
+                "email": "email@example.com",
+                 "password": "ps123",
+                "password_confirmation": "ps123"
                 }
 
         post "/api/v1/users", params: body 
 
         body = {
-                "email": "whatever12@example.com",
-                 "password": "password1",
-                "password_confirmation": "password1"
+                "email": "email@example.com",
+                 "password": "ps123",
+                "password_confirmation": "ps123"
                 }
 
         post "/api/v1/users", params: body 

@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-09-29T03:21:19-06:00">2022-09-29T03:21:19-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-09-29T08:13:48-06:00">2022-09-29T08:13:48-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -227,7 +227,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#eb57e32fcab28bc3dccba18c2c4b6b125916a316" class="src_link" title="app/services/openweather_service.rb">app/services/openweather_service.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">8</td>
+            <td class="cell--number">9</td>
             <td class="cell--number">4</td>
             <td class="cell--number">4</td>
             <td class="cell--number">0</td>
@@ -3414,7 +3414,7 @@
 
             
 
-            <code class="ruby">        response = BaseService.open_weather_conn.get(&quot;/data/3.0/onecall?lat=#{coordinates.latitude}&amp;lon=#{coordinates.longitude}&amp;appid=#{ENV[&#39;openweather_api_key&#39;]}&amp;units=imperial&quot;)</code>
+            <code class="ruby">        response = BaseService.open_weather_conn.get(&quot;/data/2.5/onecall?lat=#{coordinates.latitude}&amp;lon=#{coordinates.longitude}&amp;appid=#{ENV[&#39;openweather_api_key&#39;]}&amp;units=imperial&quot;)</code>
           </li>
         </div>
       
@@ -3425,7 +3425,7 @@
 
             
 
-            <code class="ruby">        BaseService.get_json(response)</code>
+            <code class="ruby">        binding.pry</code>
           </li>
         </div>
       
@@ -3436,7 +3436,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">        BaseService.get_json(response)</code>
           </li>
         </div>
       
@@ -3447,12 +3447,23 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
             
             
 
@@ -14710,7 +14721,7 @@
 
             
 
-            <code class="ruby">        user = User.create!(email: &quot;whatever12@example.com&quot;, password: &quot;password1&quot;, password_confirmation: &quot;password1&quot;)</code>
+            <code class="ruby">        user = User.create!(email: &quot;email@example.com&quot;, password: &quot;ps123&quot;, password_confirmation: &quot;ps123&quot;)</code>
           </li>
         </div>
       
@@ -14732,7 +14743,7 @@
 
             
 
-            <code class="ruby">        body = </code>
+            <code class="ruby">        body =</code>
           </li>
         </div>
       
@@ -14798,7 +14809,7 @@
 
             
 
-            <code class="ruby">            </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -14809,7 +14820,7 @@
 
             
 
-            <code class="ruby">        post &quot;/api/v1/road_trip&quot;, params: body </code>
+            <code class="ruby">        post &quot;/api/v1/road_trip&quot;, params: body</code>
           </li>
         </div>
       
@@ -14864,7 +14875,7 @@
 
             
 
-            <code class="ruby">        </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -14952,7 +14963,7 @@
 
             
 
-            <code class="ruby">        expect(roadtrip[:attributes]).to be_a Hash </code>
+            <code class="ruby">        expect(roadtrip[:attributes]).to be_a Hash</code>
           </li>
         </div>
       
@@ -14985,7 +14996,7 @@
 
             
 
-            <code class="ruby">        expect(roadtrip[:attributes][:start_city]).to be_a String </code>
+            <code class="ruby">        expect(roadtrip[:attributes][:start_city]).to be_a String</code>
           </li>
         </div>
       
@@ -15029,7 +15040,7 @@
 
             
 
-            <code class="ruby">        expect(roadtrip[:attributes][:end_city]).to be_a String </code>
+            <code class="ruby">        expect(roadtrip[:attributes][:end_city]).to be_a String</code>
           </li>
         </div>
       
@@ -15073,7 +15084,7 @@
 
             
 
-            <code class="ruby">        expect(roadtrip[:attributes][:travel_time]).to be_a String </code>
+            <code class="ruby">        expect(roadtrip[:attributes][:travel_time]).to be_a String</code>
           </li>
         </div>
       
@@ -15106,7 +15117,7 @@
 
             
 
-            <code class="ruby">        expect(roadtrip[:attributes][:weather_at_eta]).to be_a Hash  </code>
+            <code class="ruby">        expect(roadtrip[:attributes][:weather_at_eta]).to be_a Hash</code>
           </li>
         </div>
       
@@ -15183,7 +15194,7 @@
 
             
 
-            <code class="ruby">    end </code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -15216,7 +15227,7 @@
 
             
 
-            <code class="ruby">        user = User.create!(email: &quot;whatever12@example.com&quot;, password: &quot;password1&quot;, password_confirmation: &quot;password1&quot;)</code>
+            <code class="ruby">        user = User.create!(email: &quot;email@example.com&quot;, password: &quot;ps123&quot;, password_confirmation: &quot;ps123&quot;)</code>
           </li>
         </div>
       
@@ -15238,7 +15249,7 @@
 
             
 
-            <code class="ruby">        body = </code>
+            <code class="ruby">        body =</code>
           </li>
         </div>
       
@@ -15304,7 +15315,7 @@
 
             
 
-            <code class="ruby">            </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -15315,7 +15326,7 @@
 
             
 
-            <code class="ruby">        post &quot;/api/v1/road_trip&quot;, params: body </code>
+            <code class="ruby">        post &quot;/api/v1/road_trip&quot;, params: body</code>
           </li>
         </div>
       
@@ -15370,7 +15381,7 @@
 
             
 
-            <code class="ruby">        </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -15458,7 +15469,7 @@
 
             
 
-            <code class="ruby">        expect(roadtrip[:attributes]).to be_a Hash </code>
+            <code class="ruby">        expect(roadtrip[:attributes]).to be_a Hash</code>
           </li>
         </div>
       
@@ -15491,7 +15502,7 @@
 
             
 
-            <code class="ruby">        expect(roadtrip[:attributes][:start_city]).to be_a String </code>
+            <code class="ruby">        expect(roadtrip[:attributes][:start_city]).to be_a String</code>
           </li>
         </div>
       
@@ -15535,7 +15546,7 @@
 
             
 
-            <code class="ruby">        expect(roadtrip[:attributes][:end_city]).to be_a String </code>
+            <code class="ruby">        expect(roadtrip[:attributes][:end_city]).to be_a String</code>
           </li>
         </div>
       
@@ -15579,7 +15590,7 @@
 
             
 
-            <code class="ruby">        expect(roadtrip[:attributes][:travel_time]).to be_a String </code>
+            <code class="ruby">        expect(roadtrip[:attributes][:travel_time]).to be_a String</code>
           </li>
         </div>
       
@@ -15612,7 +15623,7 @@
 
             
 
-            <code class="ruby">        expect(roadtrip[:attributes][:weather_at_eta]).to be_a Hash  </code>
+            <code class="ruby">        expect(roadtrip[:attributes][:weather_at_eta]).to be_a Hash</code>
           </li>
         </div>
       
@@ -15689,7 +15700,7 @@
 
             
 
-            <code class="ruby">    end </code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -15722,7 +15733,7 @@
 
             
 
-            <code class="ruby">        user = User.create!(email: &quot;whatever12@example.com&quot;, password: &quot;password1&quot;, password_confirmation: &quot;password1&quot;)</code>
+            <code class="ruby">        user = User.create!(email: &quot;email@example.com&quot;, password: &quot;ps123&quot;, password_confirmation: &quot;ps123&quot;)</code>
           </li>
         </div>
       
@@ -15744,7 +15755,7 @@
 
             
 
-            <code class="ruby">        body = </code>
+            <code class="ruby">        body =</code>
           </li>
         </div>
       
@@ -15810,7 +15821,7 @@
 
             
 
-            <code class="ruby">            </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -15821,7 +15832,7 @@
 
             
 
-            <code class="ruby">        post &quot;/api/v1/road_trip&quot;, params: body </code>
+            <code class="ruby">        post &quot;/api/v1/road_trip&quot;, params: body</code>
           </li>
         </div>
       
@@ -15876,7 +15887,7 @@
 
             
 
-            <code class="ruby">        </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -15964,7 +15975,7 @@
 
             
 
-            <code class="ruby">        expect(roadtrip[:attributes]).to be_a Hash </code>
+            <code class="ruby">        expect(roadtrip[:attributes]).to be_a Hash</code>
           </li>
         </div>
       
@@ -15997,7 +16008,7 @@
 
             
 
-            <code class="ruby">        expect(roadtrip[:attributes][:start_city]).to be_a String </code>
+            <code class="ruby">        expect(roadtrip[:attributes][:start_city]).to be_a String</code>
           </li>
         </div>
       
@@ -16041,7 +16052,7 @@
 
             
 
-            <code class="ruby">        expect(roadtrip[:attributes][:end_city]).to be_a String </code>
+            <code class="ruby">        expect(roadtrip[:attributes][:end_city]).to be_a String</code>
           </li>
         </div>
       
@@ -16085,7 +16096,7 @@
 
             
 
-            <code class="ruby">        expect(roadtrip[:attributes][:travel_time]).to be_a String </code>
+            <code class="ruby">        expect(roadtrip[:attributes][:travel_time]).to be_a String</code>
           </li>
         </div>
       
@@ -16118,7 +16129,7 @@
 
             
 
-            <code class="ruby">        expect(roadtrip[:attributes][:weather_at_eta]).to be_a Hash  </code>
+            <code class="ruby">        expect(roadtrip[:attributes][:weather_at_eta]).to be_a Hash</code>
           </li>
         </div>
       
@@ -16228,7 +16239,7 @@
 
             
 
-            <code class="ruby">        user = User.create!(email: &quot;whatever12@example.com&quot;, password: &quot;password1&quot;, password_confirmation: &quot;password1&quot;)</code>
+            <code class="ruby">        user = User.create!(email: &quot;email@example.com&quot;, password: &quot;ps123&quot;, password_confirmation: &quot;ps123&quot;)</code>
           </li>
         </div>
       
@@ -16250,7 +16261,7 @@
 
             
 
-            <code class="ruby">        body = </code>
+            <code class="ruby">        body =</code>
           </li>
         </div>
       
@@ -16316,7 +16327,7 @@
 
             
 
-            <code class="ruby">            </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -16327,7 +16338,7 @@
 
             
 
-            <code class="ruby">        post &quot;/api/v1/road_trip&quot;, params: body </code>
+            <code class="ruby">        post &quot;/api/v1/road_trip&quot;, params: body</code>
           </li>
         </div>
       
@@ -16382,7 +16393,7 @@
 
             
 
-            <code class="ruby">         </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -16415,7 +16426,7 @@
 
             
 
-            <code class="ruby">    end </code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -16448,7 +16459,7 @@
 
             
 
-            <code class="ruby">        user = User.create!(email: &quot;whatever12@example.com&quot;, password: &quot;password1&quot;, password_confirmation: &quot;password1&quot;)</code>
+            <code class="ruby">        user = User.create!(email: &quot;email@example.com&quot;, password: &quot;ps123&quot;, password_confirmation: &quot;ps123&quot;)</code>
           </li>
         </div>
       
@@ -16470,7 +16481,7 @@
 
             
 
-            <code class="ruby">        body = </code>
+            <code class="ruby">        body =</code>
           </li>
         </div>
       
@@ -16536,7 +16547,7 @@
 
             
 
-            <code class="ruby">            </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -16547,7 +16558,7 @@
 
             
 
-            <code class="ruby">        post &quot;/api/v1/road_trip&quot;, params: body </code>
+            <code class="ruby">        post &quot;/api/v1/road_trip&quot;, params: body</code>
           </li>
         </div>
       
@@ -16602,7 +16613,7 @@
 
             
 
-            <code class="ruby">         </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -16646,7 +16657,7 @@
 
             
 
-            <code class="ruby">    </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -16668,7 +16679,7 @@
 
             
 
-            <code class="ruby">        user = User.create!(email: &quot;whatever12@example.com&quot;, password: &quot;password1&quot;, password_confirmation: &quot;password1&quot;)</code>
+            <code class="ruby">        user = User.create!(email: &quot;email@example.com&quot;, password: &quot;ps123&quot;, password_confirmation: &quot;ps123&quot;)</code>
           </li>
         </div>
       
@@ -16690,7 +16701,7 @@
 
             
 
-            <code class="ruby">        body = </code>
+            <code class="ruby">        body =</code>
           </li>
         </div>
       
@@ -16756,7 +16767,7 @@
 
             
 
-            <code class="ruby">            </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -16767,7 +16778,7 @@
 
             
 
-            <code class="ruby">        post &quot;/api/v1/road_trip&quot;, params: body </code>
+            <code class="ruby">        post &quot;/api/v1/road_trip&quot;, params: body</code>
           </li>
         </div>
       
@@ -16822,7 +16833,7 @@
 
             
 
-            <code class="ruby">         </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -16888,7 +16899,7 @@
 
             
 
-            <code class="ruby">        user = User.create!(email: &quot;whatever12@example.com&quot;, password: &quot;password1&quot;, password_confirmation: &quot;password1&quot;)</code>
+            <code class="ruby">        user = User.create!(email: &quot;email@example.com&quot;, password: &quot;ps123&quot;, password_confirmation: &quot;ps123&quot;)</code>
           </li>
         </div>
       
@@ -16910,7 +16921,7 @@
 
             
 
-            <code class="ruby">        body = </code>
+            <code class="ruby">        body =</code>
           </li>
         </div>
       
@@ -16976,7 +16987,7 @@
 
             
 
-            <code class="ruby">            </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -16987,7 +16998,7 @@
 
             
 
-            <code class="ruby">        post &quot;/api/v1/road_trip&quot;, params: body </code>
+            <code class="ruby">        post &quot;/api/v1/road_trip&quot;, params: body</code>
           </li>
         </div>
       
@@ -17042,7 +17053,7 @@
 
             
 
-            <code class="ruby">         </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -17097,7 +17108,7 @@
 
             
 
-            <code class="ruby">end </code>
+            <code class="ruby">end</code>
           </li>
         </div>
       
@@ -17183,7 +17194,7 @@
 
             
 
-            <code class="ruby">        user = User.create!(email: &quot;whatever12@example.com&quot;, password: &quot;password1&quot;, password_confirmation: &quot;password1&quot;)</code>
+            <code class="ruby">        user = User.create!(email: &quot;email@example.com&quot;, password: &quot;ps123&quot;, password_confirmation: &quot;ps123&quot;)</code>
           </li>
         </div>
       
@@ -17216,7 +17227,7 @@
 
             
 
-            <code class="ruby">                &quot;email&quot;: &quot;whatever12@example.com&quot;,</code>
+            <code class="ruby">                &quot;email&quot;: &quot;email@example.com&quot;,</code>
           </li>
         </div>
       
@@ -17227,7 +17238,7 @@
 
             
 
-            <code class="ruby">                &quot;password&quot;: &quot;password1&quot;,</code>
+            <code class="ruby">                &quot;password&quot;: &quot;ps123&quot;,</code>
           </li>
         </div>
       
@@ -17513,7 +17524,7 @@
 
             
 
-            <code class="ruby">        user = User.create!(email: &quot;whatever12@example.com&quot;, password: &quot;password1&quot;, password_confirmation: &quot;password1&quot;)</code>
+            <code class="ruby">        user = User.create!(email: &quot;email@example.com&quot;, password: &quot;ps123&quot;, password_confirmation: &quot;ps123&quot;)</code>
           </li>
         </div>
       
@@ -17546,7 +17557,7 @@
 
             
 
-            <code class="ruby">                &quot;email&quot;: &quot;whatever12@example.com&quot;,</code>
+            <code class="ruby">                &quot;email&quot;: &quot;email@example.com&quot;,</code>
           </li>
         </div>
       
@@ -17557,7 +17568,7 @@
 
             
 
-            <code class="ruby">                &quot;password&quot;: &quot;password1111&quot;,</code>
+            <code class="ruby">                &quot;password&quot;: &quot;ps123111&quot;,</code>
           </li>
         </div>
       
@@ -17766,7 +17777,7 @@
 
             
 
-            <code class="ruby">                &quot;password&quot;: &quot;password1111&quot;,</code>
+            <code class="ruby">                &quot;password&quot;: &quot;ps123111&quot;,</code>
           </li>
         </div>
       
@@ -18028,7 +18039,7 @@
 
             
 
-            <code class="ruby">                &quot;email&quot;: &quot;whatever12@example.com&quot;,</code>
+            <code class="ruby">                &quot;email&quot;: &quot;email@example.com&quot;,</code>
           </li>
         </div>
       
@@ -18039,7 +18050,7 @@
 
             
 
-            <code class="ruby">                 &quot;password&quot;: &quot;password1&quot;,</code>
+            <code class="ruby">                 &quot;password&quot;: &quot;ps123&quot;,</code>
           </li>
         </div>
       
@@ -18050,7 +18061,7 @@
 
             
 
-            <code class="ruby">                &quot;password_confirmation&quot;: &quot;password1&quot;</code>
+            <code class="ruby">                &quot;password_confirmation&quot;: &quot;ps123&quot;</code>
           </li>
         </div>
       
@@ -18347,7 +18358,7 @@
 
             
 
-            <code class="ruby">                &quot;password_confirmation&quot;: &quot;password1&quot;</code>
+            <code class="ruby">                &quot;password_confirmation&quot;: &quot;ps123&quot;</code>
           </li>
         </div>
       
@@ -18798,7 +18809,7 @@
 
             
 
-            <code class="ruby">                &quot;email&quot;: &quot;whatever12@example.com&quot;,</code>
+            <code class="ruby">                &quot;email&quot;: &quot;email@example.com&quot;,</code>
           </li>
         </div>
       
@@ -18809,7 +18820,7 @@
 
             
 
-            <code class="ruby">                 &quot;password&quot;: &quot;password1&quot;,</code>
+            <code class="ruby">                 &quot;password&quot;: &quot;ps123&quot;,</code>
           </li>
         </div>
       
@@ -18820,7 +18831,7 @@
 
             
 
-            <code class="ruby">                &quot;password_confirmation&quot;: &quot;password1&quot;</code>
+            <code class="ruby">                &quot;password_confirmation&quot;: &quot;ps123&quot;</code>
           </li>
         </div>
       
@@ -18886,7 +18897,7 @@
 
             
 
-            <code class="ruby">                &quot;email&quot;: &quot;whatever12@example.com&quot;,</code>
+            <code class="ruby">                &quot;email&quot;: &quot;email@example.com&quot;,</code>
           </li>
         </div>
       
@@ -18897,7 +18908,7 @@
 
             
 
-            <code class="ruby">                 &quot;password&quot;: &quot;password1&quot;,</code>
+            <code class="ruby">                 &quot;password&quot;: &quot;ps123&quot;,</code>
           </li>
         </div>
       
@@ -18908,7 +18919,7 @@
 
             
 
-            <code class="ruby">                &quot;password_confirmation&quot;: &quot;password1&quot;</code>
+            <code class="ruby">                &quot;password_confirmation&quot;: &quot;ps123&quot;</code>
           </li>
         </div>
       
