@@ -13,5 +13,5 @@
 * Store your keys in application.yml
   * mapquest_api_key: your_key
   * openweather_api_key: your_key
-  * unsplash_api_key: your_key
+
 
